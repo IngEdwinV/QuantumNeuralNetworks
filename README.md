@@ -20,7 +20,7 @@ Las redes neuronales Quianticas se pueden ver desde dos perspectivas:
 - **Aprendizaje automático** que son modelos algorítmicos que se pueden entrenar para encontrar patrones, estos pueden cargar datos clásicos en un estado cuántico y luego procesarlos con puertas cuánticas.
 - **Computación cuantica** Son algoritmos cuánticos basados en circuitos cuánticos parametrizados para poderse entrenar de manera variacional utilizando optimizadores clásicos.
 
-![test1](https://github.com/IngEdwinV/QuantumNeuralNetworks/Imagenes/Test1.png)
+![test1](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test1.png)
 
 # Implementación 🚀
 
