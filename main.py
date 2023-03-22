@@ -74,3 +74,90 @@ print(
 )
 print(
     f"Number of trainable weights for SamplerQNN: {sampler_qnn.num_weights} \nWeights: {sampler_qnn_weights}"
+)
+
+print("--------------Paso hacia delante sin lotes EstimatorQNN -------------------")
+
+estimator_qnn_forward = estimator_qnn.forward(estimator_qnn_input, estimator_qnn_weights)
+
+print(
+    f"Forward pass result for EstimatorQNN: {estimator_qnn_forward}. \nShape: {estimator_qnn_forward.shape}"
+)
+
+print("--------------Paso hacia delante sin lotes SamplerQNN-------------------")
+
+sampler_qnn_forward = sampler_qnn.forward(sampler_qnn_input, sampler_qnn_weights)
+
+print(
+    f"Forward pass result for SamplerQNN: {sampler_qnn_forward}.  \nShape: {sampler_qnn_forward.shape}"
+)
+
+print("--------------Paso hacia delante por lotes EstimatorQNN -------------------")
+estimator_qnn_forward_batched = estimator_qnn.forward(
+    [estimator_qnn_input, estimator_qnn_input], estimator_qnn_weights
+)
+
+print(
+    f"Forward pass result for EstimatorQNN: {estimator_qnn_forward_batched}.  \nShape: {estimator_qnn_forward_batched.shape}"
+)
+
+print("--------------Paso hacia delante por lotes SamplerQNN-------------------")
+sampler_qnn_forward_batched = sampler_qnn.forward(
+    [sampler_qnn_input, sampler_qnn_input], sampler_qnn_weights
+)
+
+print(
+    f"Forward pass result for SamplerQNN: {sampler_qnn_forward_batched}.  \nShape: {sampler_qnn_forward_batched.shape}"
+)
+
+
+print("--------------Paso hacia atras sin gradiente EstimatorQNN -------------------")
+estimator_qnn_input_grad, estimator_qnn_weight_grad = estimator_qnn.backward(
+    estimator_qnn_input, estimator_qnn_weights
+)
+
+print(
+    f"Input gradients for EstimatorQNN: {estimator_qnn_input_grad}.  \nShape: {estimator_qnn_input_grad}"
+)
+print(
+    f"Weight gradients for EstimatorQNN: {estimator_qnn_weight_grad}.  \nShape: {estimator_qnn_weight_grad.shape}"
+)
+
+print("--------------Paso hacia atras sin gradiente  SamplerQNN-------------------")
+sampler_qnn_input_grad, sampler_qnn_weight_grad = sampler_qnn.backward(
+    sampler_qnn_input, sampler_qnn_weights
+)
+
+print(
+    f"Input gradients for SamplerQNN: {sampler_qnn_input_grad}.  \nShape: {sampler_qnn_input_grad}"
+)
+print(
+    f"Weight gradients for SamplerQNN: {sampler_qnn_weight_grad}.  \nShape: {sampler_qnn_weight_grad.shape}"
+)
+
+estimator_qnn.input_gradients = True
+sampler_qnn.input_gradients = True
+
+print("--------------Paso hacia atras con gradiente EstimatorQNN -------------------")
+estimator_qnn_input_grad, estimator_qnn_weight_grad = estimator_qnn.backward(
+    estimator_qnn_input, estimator_qnn_weights
+)
+
+print(
+    f"Input gradients for EstimatorQNN: {estimator_qnn_input_grad}.  \nShape: {estimator_qnn_input_grad.shape}"
+)
+print(
+    f"Weight gradients for EstimatorQNN: {estimator_qnn_weight_grad}.  \nShape: {estimator_qnn_weight_grad.shape}"
+)
+
+print("--------------Paso hacia atras con gradiente  SamplerQNN-------------------")
+sampler_qnn_input_grad, sampler_qnn_weight_grad = sampler_qnn.backward(
+    sampler_qnn_input, sampler_qnn_weights
+)
+
+print(
+    f"Input gradients for SamplerQNN: {sampler_qnn_input_grad}.  \nShape: {sampler_qnn_input_grad.shape}"
+)
+print(
+    f"Weight gradients for SamplerQNN: {sampler_qnn_weight_grad}.  \nShape: {sampler_qnn_weight_grad.shape}"
+)
