@@ -31,3 +31,10 @@ Está diseñado para implementarse de la siguiente forma:
 * Una interfaz (**NeuralNetwork**) para las redes neuronales, esta será una clase abstracta de los cuales todos los QNN heredaran
 * Una red (**EstimatorQNN**) basada en la evaluación de observables.
 * Una red (**SamplerQNN**) basada en las muestras de medición del circuito cuántico.
+
+### Intalación de paquetes
+
+Se realiza la instalación de los paquetes requeridos para la ejecución del proyecto. 
+- pip install 'qiskit[machine-learning] 
+- pip install matplotlib 
+- pip install IPython
