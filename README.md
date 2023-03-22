@@ -67,5 +67,35 @@ denimos los parametros para las dos instancias:
 ![test4](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test4.png)
 
 
+#
+
+Ahora teniendo instanciadas y parametrizadas nuestras dos clases de QNN, vamos a ver como podemos vanazar hacia adelante en la red haciendo esto por lotes o sin lotes
+
+De acuerdo al aguia nos dice que el paso hacia adelante sin lotes para el **EstimatorQNN** es el numero de muestra :
+
+![test5](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test5.png)
+
+y para **SamplerQNN** la salida es una funcion de de interpretación personalizada con la muestra:
+
+![test6](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test6.png)
+
+Ahora veamos el paso hacia delante por lotes
+
+Tenemos que para **EstimatorQNN** se debe pasar el tamaño del lote, numero del Qubits y el observable:
+
+![test7](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test7.png)
+
+Con respecto a **SamplerQNN** es una funcion de de interpretación personalizada pero con el tamaño del lote y la muestra:
+
+![test8](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test8.png)
+
+#
+
+Asi como podemos configurar que en la red se realicen pasos hacia adelante, podemos configurar para que lo haga hacia atras
+
+De acuerdo con la guia dice que en los pasos hacia atras solo se puede calcular gradientes de acuerdo con los pesos parametrizados.
+
+
+![test9](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test9.png)
 
 
