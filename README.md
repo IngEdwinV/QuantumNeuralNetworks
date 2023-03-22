@@ -38,3 +38,34 @@ Se realiza la instalación de los paquetes requeridos para la ejecución del pro
 - pip install 'qiskit[machine-learning] 
 - pip install matplotlib 
 - pip install IPython
+
+### Crear Instancia **EstimatorQNN**:
+
+como primer paso debemos crear la red que evaluara los observables, para esto se debe crear un circuito cuantico parametrizado.
+El primer parametro sera un QNN y el otro un entrenable, teniendo el circuito podemos creal el observable y obtener como resultado lo siguiente:
+
+![test2](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test2.png)
+
+con el circuito y el observable podemos entonces crear el constructor EstimatorQNN y con esto la red crea un instancia primitiva local que sera la referencia para nosotros.
+
+### Crear Instancia **SamplerQNN**:
+
+Ahora vamos a crea la instancia que mide las mediciones resultantes de un circuito cuantico, para esto se hace de una manera similar al EstimatorQNN, pero cambiamos los parametros del circuito, en este caso tendremos dos parametros de entrada  y cuatro parametros de peso de entrenamiento, tendriamos un circuito de la siguiente manera:
+
+![test3](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test3.png)
+
+Con el circuito parametriza creado procedemos a crear la instancia SamplerQNN
+
+## How to Run a Forward Pass
+
+De acuerdo a la guia dice que en un entorno real las entradas estarian definidas por un conjunto de datos y los pesos estarian definidos por un algoritmo de entrenamiento o parte de un modelo preentrenado.
+
+de acuerdo al tutorial se definiran las entredas como un junto de datos aleatorios y los pesos con una dimención correcta
+
+denimos los parametros para las dos instancias:
+
+![test4](https://github.com/IngEdwinV/QuantumNeuralNetworks/blob/main/Imagenes/test4.png)
+
+
+
+
